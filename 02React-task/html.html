@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
+    <script src="node_modules/babel-standalone/babel.js"></script>
+    <style>
+      #myinputone{
+          width: 200px;
+          height: 30px;
+          border: 10px solid blue;
+      }
+    </style>
+</head>
+<body>
+<div id="input"></div>
+  <script type="text/babel">
+      class MyInput extends React.Component{
+         constructor(props){
+           super(props)
+             this.state={
+               value:''
+             }
+         }
+         chageValue(event){
+             this.setState({
+                 value:event.target.value
+             })
+         }
+
+         render(){
+            return (
+                  <div>
+                      <input id="myinputone" type="text" value={this.state.value} onChange={this.chageValue.bind(this)}/>
+                      <p>{this.state.value}</p>
+                  </div>
+            )
+         }
+      }
+     ReactDOM.render(
+        <MyInput/> ,document.getElementById("input")
+     )
+
+  </script>
+</body>
+</html>
