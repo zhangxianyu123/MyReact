@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
+    <script src="node_modules/babel-standalone/babel.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #Header {
+            width: 100%;
+            height: 78px;
+            /*border: 1px solid black;*/
+            position: fixed;
+            z-index: 10;
+            background-color: white;
+        }
+
+        #download {
+            width: 118px;
+            height: 30px;
+            background-color: rgb(237, 247, 255);
+            float: left;
+            margin-top: 30px;
+            text-align: center;
+            margin-left: 530px;
+
+        }
+
+        #radao {
+            float: left;
+
+        }
+
+        span {
+            display: inline-block;
+            margin-top: 30px;
+            margin-left: 50px;
+        }
+
+        #bottomone {
+            width: 960px;
+            height: 78px;
+            /*border: 1px solid black;*/
+            margin: auto;
+        }
+
+        #ScanTop {
+            width: 100%;
+            height: 80px;
+            background-color: white;
+        }
+
+        #Scan {
+            width: 100%;
+            height: 540px;
+            background-color: rgb(14, 119, 237);
+            z-index: 8;
+        }
+
+        #phone {
+            margin-left: 426px;
+            margin-top: 12px;
+            float: left;
+        }
+
+        /*扫码下载部分*/
+        #inner {
+            width: 392px;
+            height: 403px;
+            /*border: 1px solid black;*/
+            float: left;
+            margin-left: 117px;
+            margin-top: 50px;
+        }
+
+        #oneP {
+            color: white;
+            font-size: 40px;
+        }
+
+        #twoP {
+            color: white;
+        }
+
+        #imgone {
+            margin-top: 30px;
+            margin-left: 20px;
+            float: left;
+        }
+
+        #imgtwo {
+            margin-top: 30px;
+            margin-left: 20px;
+            float: left;
+        }
+
+        #imgthree {
+            margin-left: 20px;
+            margin-top: 20px;
+            float: left;
+        }
+
+        /*主体的浏览内容*/
+        #main-content {
+            width: 100%;
+            height: 4082px;
+            /*border: 1px solid black;*/
+            background-color: rgb(247, 247, 247);
+        }
+
+        #container-fixed-width {
+            width: 960px;
+            height: 3900px;
+            /*border: 1px solid black;*/
+            margin: auto;
+        }
+
+        /*浏览内容标签*/
+        #section-head {
+            width: 960px;
+            height: 100px;
+            /*border: 1px solid black;*/
+        }
+
+        #spanone {
+            font-size: 30px;
+        }
+
+        #spantwo {
+            font-size: 30px;
+            color: lightgray;
+            margin-left: 600px;
+        }
+
+        /*加载所有图片*/
+        #row {
+            width: 958px;
+            height: 3800px;
+            /*border: 1px solid black;*/
+        }
+
+        #row img {
+            width: 255px;
+            height: 255px;
+            /*margin-left: 40px;*/
+            /*margin-top: 30px;*/
+        }
+
+        #myDiv {
+            width: 255px;
+            height: 330px;
+            /*border: 1px solid black;*/
+            float: left;
+            margin-top: 40px;
+            margin-left: 40px;
+            background-color: white;
+            text-align: center;
+            font-size: 20px;
+        }
+        /*下部分更多精彩内容*/
+        #down{
+            width: 961px;
+            height: 60px;
+            background-color:rgb(227,234,239);
+            float: left;
+            text-align: center;
+            margin-top: 30px;
+        }
+        #down a{
+            text-decoration: none;
+            font-size: 30px;
+            line-height: 60px;
+        }
+    </style>
+</head>
+<body>
+<div id="Header">
+</div>
+<script type="text/babel">
+    //第一个组件
+    class Header extends React.Component {
+        render() {
+            return (
+                    <div id="Header">
+                        <div id="bottomone">
+                            <img id="radao" src="img/ribao.png" height="73" width="155"/>
+                            <div id="download">App下载</div>
+                            <span>浏览内容</span>
+                        </div>
+                    </div>
+            )
+        }
+    }
+    //    第2个组件
+
+    class Bottom extends React.Component {
+        render() {
+            return (
+
+                    <div id="Scan">
+                        <div id="ScanTop"></div>
+                        <div id="mian">
+                            <img id="phone" src="img/phone_sample.png" height="448" width="409"/></div>
+                        <div id="inner">
+                            <p id="oneP">每天3次,每次七分钟</p>
+                            <p id="twoP">每天三次 每次七分钟在中国，资讯类移动应用的人均阅读时长是 5 分钟，
+                                而在知乎日报，这个数字是 21。</p>
+                            <img id="imgone" src="img/qr_top2.png" height="135" width="135"/>
+                            <img id="imgtwo" src="img/ios.png" height="62" width="191"/>
+                            <img id="imgthree" src="img/Android.png" height="62" width="190"/>
+                        </div>
+                    </div>
+            )
+
+        }
+    }
+    //    第3个组件
+    class Content extends React.Component {
+        render() {
+            return (
+                    <div id="main-content">
+                        <div id="container-fixed-width">
+                            <div id="section-head">
+                                <span id="spanone">浏览内容</span>
+                                <span id="spantwo">最新内容</span>
+                            </div>
+                            <div id="row">
+                                {imgArrs()}
+                                <div id="down">
+                                    <a href="#">更多精彩内容在知乎日报中查看</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <img src="img/dibu.png" height="263" width="1907"/></div>
+            )
+        }
+    }
+    //    循环创建图片
+    function imgArrs() {
+        var imgAll = [];
+        for (var i = 0; i < 30; i++) {
+            var brr = <div id="myDiv"><img src={'img/video' + i + '.jpg'}/>
+                <p>我是谁??我在哪??</p>
+            </div>
+            imgAll.push(brr)
+
+        }
+        return imgAll
+
+    }
+
+    //    整体拼接组件
+    class Whole extends React.Component {
+        render() {
+            return (
+                    <div>
+                        <Header/>
+                        <Bottom/>
+                        <Content/>
+                    </div>
+            )
+        }
+    }
+    //渲染呈现页面
+    ReactDOM.render(
+            <Whole/>,
+            document.body
+    )
+
+</script>
+<script>
+
+
+</script>
+</body>
+</html>
